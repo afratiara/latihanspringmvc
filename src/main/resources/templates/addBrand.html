@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+		table {
+  		font-family: arial, sans-serif;
+  		border-collapse: collapse;
+  		width: 100%;
+		}
+
+	td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+	tr:nth-child(even) {
+  		background-color: #dddddd;
+	}
+	</style>
+
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form action="#" method="post" th:action="@{/brand/save}" th:object="${brand}">
+	<input type="hidden" th:field="*{id}" />
+	
+		Name
+		<input type="text" th:field="*{name}" />
+		<br></br>
+		
+		Product Type
+		<input type="text" th:field="*{type}" />
+		<br></br>
+		
+		<br>
+		<input type="submit" value="Save" />
+		</br>
+	</form>
+	
+</body>
+</html>

@@ -21,24 +21,22 @@
 	</style>
 	
 <meta charset="ISO-8859-1"></meta>
-<title>List Product</title>
+<title>List Brand</title>
 </head>
 <body>
 	<table>
 	<tr>
-		<th>ID Product</th>
-		<th>Brand ID</th>
+		<th>ID Brand</th>
 		<th>Name</th>
-		<th>Price</th>
-		<th>Type</th>
+		<th>Product Type</th>
+		<th>Action</th>
 	</tr>
-	<tr th:each="product : ${listProduct}">
-		<td th:text="${product.id}"></td>
-		<td th:text="${product.brandId}"></td>
- 	 	<td th:text="${product.name}"></td>
- 	 	<td th:text="${product.price}"></td>
- 	 	<td th:text="${product.type}"></td>
- 	 	<td> <a href = "#">Edit</a> <a href = "#">Delete</a></td>
+	<tr th:each="brand : ${listBrand}">
+		<td th:text="${brand.id}"></td>
+		<td th:text="${brand.name}"></td>
+ 	 	<td th:text="${brand.type}"></td>
+ 	 	<td> <a th:href="${'/brand/edit/' + brand.id}">Edit</a> </td>
+ 	 	<td> <a th:href="${'/brand/delete/' + brand.id}">Delete</a> </td>
  	 </tr>
 	</table>
 
